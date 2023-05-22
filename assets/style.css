@@ -1,0 +1,59 @@
+body{
+    display: flex;
+    flex-direction: column;
+    background-image: url(../assets/background_rick_and_morty.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh; 
+}
+body::-webkit-scrollbar{
+    background: none;
+    width: 0;
+}
+ul,li{
+    list-style: none;
+    font: bold;
+}
+.main{
+    padding-top: 60px;
+}
+#container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+    padding-left: 50px;
+    height: 100vh;
+    overflow: auto;
+}
+#container::-webkit-scrollbar{
+    background: none;
+}
+.character-container{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background-color: #66cdaa;
+    padding: 20px 20px 20px 20px;
+
+    
+   
+}
+.sidebar{
+    height: 50vh;
+    width: 22vh;
+    overflow: auto;
+}
+.sidebar::-webkit-scrollbar{
+    background: none;
+    
+}
+.list-group-item{
+    background-color: #66cdaa;
+    font-size: medium;
+}
+.typeElement {
+    font-size: medium;
+}
+
+    
