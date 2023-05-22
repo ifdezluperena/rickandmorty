@@ -39,17 +39,14 @@ function fetchEpisodeCharacters(episodeId) {
 function displayCharacters(characters) {
     const container = document.getElementById("container");
     if (container) {
-        container.innerHTML = ""; // Limpiar el contenido anterior
+        container.innerHTML = "";
         characters.forEach((character) => {
-            // Crear un contenedor para cada personaje
             const characterContainer = document.createElement("div");
             characterContainer.classList.add("character-container");
-            // Mostrar la imagen del personaje
             const imageElement = document.createElement("img");
             imageElement.src = character.image;
             imageElement.classList.add("character-image");
             characterContainer.appendChild(imageElement);
-            // Mostrar los datos del personaje
             const nameElement = document.createElement("h3");
             nameElement.textContent = character.name;
             characterContainer.appendChild(nameElement);
@@ -59,7 +56,6 @@ function displayCharacters(characters) {
             const speciesElement = document.createElement("p");
             speciesElement.textContent = `Species: ${character.species}`;
             characterContainer.appendChild(speciesElement);
-            // Agregar el contenedor del personaje al contenedor principal
             container.appendChild(characterContainer);
         });
     }
@@ -113,16 +109,14 @@ function getLocations() {
             const container = document.getElementById("container");
             const location = yield fetchAllLocations();
             if (container) {
-                container.innerHTML = ""; // Limpiar el contenido anterior
+                container.innerHTML = "";
                 location.forEach((Location) => {
-                    // Crear un contenedor para cada personaje+
                     const LocationContainer = document.createElement("div");
                     LocationContainer.classList.add("Location-container");
                     container.appendChild(LocationContainer);
                     const listElement = document.createElement("ul");
                     listElement.setAttribute("class", "Location-list list-group");
                     LocationContainer.appendChild(listElement);
-                    // Mostrar el tÃ­tulo de la location
                     const titleElement = document.createElement("li");
                     titleElement.textContent = Location.name;
                     titleElement.setAttribute("class", "Location-list list-group-item");
@@ -130,12 +124,10 @@ function getLocations() {
                     titleElement.addEventListener("click", function () {
                         displayLocation(Location);
                     });
-                    // Mostrar los datos del personaje
                     const typeElement = document.createElement("h3");
                     typeElement.textContent = `Location: ${Location.type} | Dimension: ${Location.dimension}`;
                     typeElement.classList.add("typeElement");
                     LocationContainer.appendChild(typeElement);
-                    // Agregar el contenedor del personaje al contenedor principal
                     container.appendChild(LocationContainer);
                 });
             }
@@ -145,7 +137,7 @@ function getLocations() {
 getLocations();
 function displayLocation(location) {
     const container = document.getElementById("container");
-    container.innerHTML = ""; // Limpiar el contenido anterior
+    container.innerHTML = "";
     const LocationContainer = document.createElement("div");
     LocationContainer.classList.add("Location-container");
     container.appendChild(LocationContainer);
@@ -224,17 +216,14 @@ function getCharacters() {
             const container = document.getElementById("container");
             const character = yield fetchAllCharacters();
             if (container) {
-                container.innerHTML = ""; // Limpiar el contenido anterior
+                container.innerHTML = "";
                 character.forEach((character) => {
-                    // Crear un contenedor para cada personaje
                     const characterContainer = document.createElement("div");
                     characterContainer.classList.add("character-container");
-                    // Mostrar la imagen del personaje
                     const imageElement = document.createElement("img");
                     imageElement.src = character.image;
                     imageElement.classList.add("character-image");
                     characterContainer.appendChild(imageElement);
-                    // Mostrar los datos del personaje
                     const nameElement = document.createElement("h3");
                     nameElement.textContent = character.name;
                     characterContainer.appendChild(nameElement);
@@ -245,7 +234,6 @@ function getCharacters() {
                     speciesElement.textContent = `Species: ${character.species}`;
                     characterContainer.appendChild(speciesElement);
                     characterContainer.addEventListener("click", () => { showCharacter(character); });
-                    // Agregar el contenedor del personaje al contenedor principal
                     container.appendChild(characterContainer);
                 });
             }
